@@ -1,0 +1,21 @@
+# Example workflow for GitHub Actions
+
+name: Example workflow
+
+# specfiy the trigger for this workflow
+on:
+  workflow_dispatch:
+
+# group together all jobs that run in the workflow
+jobs:
+  # define job name
+  build:
+    # define the type of machine that will process a job
+    runs-on: ubuntu-latest
+
+    steps:
+    # check out repository
+    - uses: actions/checkout@v4
+
+    - name: Run command
+      run: echo "Hello, GitHub Actions!"
