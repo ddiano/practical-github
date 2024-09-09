@@ -1,5 +1,4 @@
 # Example workflow for GitHub Actions
-
 name: Example workflow
 
 # specfiy the trigger for this workflow
@@ -15,7 +14,11 @@ jobs:
 
     steps:
     # check out repository
-    - uses: actions/checkout@v4
+    - name: Checkout
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332  # v4.1.7
+      with:
+        # whether to configure token or SSH key with local git config
+        persist-credentials: false
 
     - name: Run command
       run: echo "Hello, GitHub Actions!"
